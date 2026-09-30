@@ -3,15 +3,13 @@ import styles from './app.module.css';
 import data from './data.json';
 
 export const App = () => {
-  // 1. Состояния
+  
   const [steps, setSteps] = useState(data);
   const [activeIndex, setActiveIndex] = useState(0);
-
-  // 2. Флаги
+ 
   const isFirstStep = activeIndex === 0;
   const isLastStep = activeIndex === steps.length - 1;
 
-  // 3. Обработчики
   const onBackClick = () => {
     if (!isFirstStep) {
       setActiveIndex(activeIndex - 1);
@@ -41,7 +39,7 @@ export const App = () => {
 
           <ul className={styles['steps-list']}>
             {steps.map((step, index) => {
-              // Классы для каждого шага
+		
               const isDone = index <= activeIndex;
               const isActive = index === activeIndex;
 
